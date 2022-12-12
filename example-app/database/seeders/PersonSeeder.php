@@ -3,21 +3,21 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\People;
+use App\Models\Person;
 use Faker\Factory;
 
 use Illuminate\Support\Facades\DB;
 
-class PeopleSeeder extends Seeder
+class PersonSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('people')->delete();
+        DB::table('person')->delete();
 
         $faker = Factory::create();
 
         for ($i = 0; $i < 50; $i++) {
-            People::create([
+            Person::create([
                 'name' => $faker->firstName(),
                 'surname' => $faker->lastName(),
                 'phone_num' => $faker->e164PhoneNumber() ,
